@@ -10,9 +10,9 @@ namespace StajProje1
     {
         public string? isim { get; set; }
         public string? soyad { get; set; }
-        public int numara { get; set; }
+        public string? numara { get; set; }
         public int ID { get; set; }
-        public int Gizli { get; set; }
+        public int gizli { get; set; }
 
     }
 }

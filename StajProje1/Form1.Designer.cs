@@ -36,13 +36,13 @@
             textBox3 = new TextBox();
             button1 = new Button();
             dataGridView1 = new DataGridView();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
             isim = new DataGridViewTextBoxColumn();
             soyad = new DataGridViewTextBoxColumn();
             numara = new DataGridViewTextBoxColumn();
             ID = new DataGridViewTextBoxColumn();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -79,6 +79,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(100, 23);
             textBox1.TabIndex = 3;
+            textBox1.KeyPress += textBox1_KeyPress;
             // 
             // textBox2
             // 
@@ -86,6 +87,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(100, 23);
             textBox2.TabIndex = 4;
+            textBox2.KeyPress += textBox1_KeyPress;
             // 
             // textBox3
             // 
@@ -93,6 +95,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(100, 23);
             textBox3.TabIndex = 5;
+            textBox3.KeyPress += textBox3_KeyPress;
             // 
             // button1
             // 
@@ -113,8 +116,27 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(420, 216);
             dataGridView1.TabIndex = 7;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
+            // 
+            // isim
+            // 
+            isim.HeaderText = "İsim";
+            isim.Name = "isim";
+            // 
+            // soyad
+            // 
+            soyad.HeaderText = "Soyad";
+            soyad.Name = "soyad";
+            // 
+            // numara
+            // 
+            numara.HeaderText = "Numara";
+            numara.Name = "numara";
+            // 
+            // ID
+            // 
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
             // 
             // button2
             // 
@@ -145,26 +167,6 @@
             button4.Text = "Arama";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
-            // 
-            // isim
-            // 
-            isim.HeaderText = "İsim";
-            isim.Name = "isim";
-            // 
-            // soyad
-            // 
-            soyad.HeaderText = "Soyad";
-            soyad.Name = "soyad";
-            // 
-            // numara
-            // 
-            numara.HeaderText = "Numara";
-            numara.Name = "numara";
-            // 
-            // ID
-            // 
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
             // 
             // Form1
             // 
