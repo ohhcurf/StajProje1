@@ -65,20 +65,20 @@ namespace StajProje1
 
 
         //ekleme düðmesi
-        private void button1_Click(object sender, EventArgs e)
+        private void ekleButton_Click(object sender, EventArgs e)
         {
             //kontrol etme
-            if (textBox1.Text == "")
+            if (isimBox.Text == "")
             {
                 MessageBox.Show("isim giriniz.");
                 return;
             }
-            if (textBox2.Text == "")
+            if (soyadBox.Text == "")
             {
                 MessageBox.Show("soyad giriniz.");
                 return;
             }
-            if (textBox3.Text == "")
+            if (numaraBox.Text == "")
             {
                 MessageBox.Show("numara giriniz.");
                 return;
@@ -86,7 +86,7 @@ namespace StajProje1
             //numara sayý mý kontrolü
             try
             {
-                int sayi = Int32.Parse(textBox3.Text);
+                int sayi = Int32.Parse(numaraBox.Text);
             }
             catch (FormatException)
             {
@@ -96,9 +96,9 @@ namespace StajProje1
             //yeni öðrenci oluþturma
             Ogrenci newOgrenci = new Ogrenci
             {
-                isim = textBox1.Text,
-                soyad = textBox2.Text,
-                numara = textBox3.Text,
+                isim = isimBox.Text,
+                soyad = soyadBox.Text,
+                numara = numaraBox.Text,
                 gizli = 1,
 
             };
@@ -160,7 +160,7 @@ namespace StajProje1
 
 
         //listele düðmesi
-        private void button2_Click(object sender, EventArgs e)
+        private void listeleButton_Click(object sender, EventArgs e)
         {
             Listele();
         }
@@ -186,15 +186,15 @@ namespace StajProje1
 
 
         //sil düðmesi
-        private void button3_Click(object sender, EventArgs e)
+        private void silButton_Click(object sender, EventArgs e)
         {
             //silincek deðerin gizli deðerini 0 yapar
-            if(dataGridView1.SelectedCells.Count<= 0)
+            if (dataGridView1.SelectedCells.Count <= 0)
             {
                 MessageBox.Show("Bir öðrenci seçiniz.");
                 return;
             }
-            
+
             int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
             int secilenID = (int)dataGridView1.Rows[selectedRowIndex].Cells["ID"].Value;
             List<Ogrenci> Ogrenciler = Okuma();
@@ -209,13 +209,13 @@ namespace StajProje1
 
 
         //Arama düðmesi
-        private void button4_Click(object sender, EventArgs e)
+        private void aramaButton_Click(object sender, EventArgs e)
         {
             //Filtreleme
             List<Ogrenci> ogrenciler = Okuma();
-            if (textBox1.Text != "") ogrenciler = ogrenciler.Where(ogrenci => ogrenci.isim == textBox1.Text).ToList();
-            if (textBox2.Text != "") ogrenciler = ogrenciler.Where(ogrenci => ogrenci.soyad == textBox2.Text).ToList();
-            if (textBox3.Text != "") ogrenciler = ogrenciler.Where(ogrenci => ogrenci.numara == textBox3.Text).ToList();
+            if (isimBox.Text != "") ogrenciler = ogrenciler.Where(ogrenci => ogrenci.isim == isimBox.Text).ToList();
+            if (soyadBox.Text != "") ogrenciler = ogrenciler.Where(ogrenci => ogrenci.soyad == soyadBox.Text).ToList();
+            if (numaraBox.Text != "") ogrenciler = ogrenciler.Where(ogrenci => ogrenci.numara == numaraBox.Text).ToList();
             ogrenciler = ogrenciler.Where(ogrenci => ogrenci.gizli == 1).ToList();
             ogrenciler = ogrenciler.OrderBy(p => p.isim).ThenBy(p => p.soyad).ThenBy(p => p.numara).ToList();
             dataGridView1.Rows.Clear();
@@ -245,7 +245,7 @@ namespace StajProje1
 
 
         //ad-soyad geçerli karakterler
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void isimBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
             {
@@ -261,7 +261,7 @@ namespace StajProje1
 
 
         //numara geçerli karakterler
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        private void numaraBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
