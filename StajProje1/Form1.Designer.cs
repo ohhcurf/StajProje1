@@ -36,20 +36,20 @@
             numaraBox = new TextBox();
             button1 = new Button();
             dataGridView1 = new DataGridView();
-            isim = new DataGridViewTextBoxColumn();
-            soyad = new DataGridViewTextBoxColumn();
-            numara = new DataGridViewTextBoxColumn();
-            ID = new DataGridViewTextBoxColumn();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            kisiSayisiLabel = new Label();
+            isim = new DataGridViewTextBoxColumn();
+            soyad = new DataGridViewTextBoxColumn();
+            numara = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(71, 31);
+            label1.Location = new Point(48, 33);
             label1.Name = "label1";
             label1.Size = new Size(29, 15);
             label1.TabIndex = 0;
@@ -58,7 +58,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(71, 84);
+            label2.Location = new Point(48, 86);
             label2.Name = "label2";
             label2.Size = new Size(39, 15);
             label2.TabIndex = 1;
@@ -67,7 +67,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(71, 134);
+            label3.Location = new Point(48, 136);
             label3.Name = "label3";
             label3.Size = new Size(50, 15);
             label3.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             // isimBox
             // 
-            isimBox.Location = new Point(164, 31);
+            isimBox.Location = new Point(141, 33);
             isimBox.Name = "isimBox";
             isimBox.Size = new Size(100, 23);
             isimBox.TabIndex = 3;
@@ -83,7 +83,7 @@
             // 
             // soyadBox
             // 
-            soyadBox.Location = new Point(164, 81);
+            soyadBox.Location = new Point(141, 83);
             soyadBox.Name = "soyadBox";
             soyadBox.Size = new Size(100, 23);
             soyadBox.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             // numaraBox
             // 
-            numaraBox.Location = new Point(164, 134);
+            numaraBox.Location = new Point(141, 136);
             numaraBox.Name = "numaraBox";
             numaraBox.Size = new Size(100, 23);
             numaraBox.TabIndex = 5;
@@ -99,7 +99,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(71, 224);
+            button1.Location = new Point(48, 193);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 6;
@@ -110,37 +110,17 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { isim, soyad, numara, ID });
-            dataGridView1.Location = new Point(348, 31);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { isim, soyad, numara });
+            dataGridView1.Location = new Point(307, 33);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(420, 216);
+            dataGridView1.Size = new Size(420, 344);
             dataGridView1.TabIndex = 7;
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
             // 
-            // isim
-            // 
-            isim.HeaderText = "İsim";
-            isim.Name = "isim";
-            // 
-            // soyad
-            // 
-            soyad.HeaderText = "Soyad";
-            soyad.Name = "soyad";
-            // 
-            // numara
-            // 
-            numara.HeaderText = "Numara";
-            numara.Name = "numara";
-            // 
-            // ID
-            // 
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            // 
             // button2
             // 
-            button2.Location = new Point(189, 224);
+            button2.Location = new Point(307, 405);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 8;
@@ -150,7 +130,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(693, 270);
+            button3.Location = new Point(652, 405);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
             button3.TabIndex = 9;
@@ -160,7 +140,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(348, 270);
+            button4.Location = new Point(166, 193);
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
             button4.TabIndex = 10;
@@ -168,11 +148,38 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += aramaButton_Click;
             // 
+            // kisiSayisiLabel
+            // 
+            kisiSayisiLabel.AutoSize = true;
+            kisiSayisiLabel.Location = new Point(348, 9);
+            kisiSayisiLabel.Name = "kisiSayisiLabel";
+            kisiSayisiLabel.Size = new Size(0, 15);
+            kisiSayisiLabel.TabIndex = 11;
+            // 
+            // isim
+            // 
+            isim.HeaderText = "İsim";
+            isim.Name = "isim";
+            isim.Width = 140;
+            // 
+            // soyad
+            // 
+            soyad.HeaderText = "Soyad";
+            soyad.Name = "soyad";
+            soyad.Width = 140;
+            // 
+            // numara
+            // 
+            numara.HeaderText = "Numara";
+            numara.Name = "numara";
+            numara.ReadOnly = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(766, 450);
+            Controls.Add(kisiSayisiLabel);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -186,7 +193,6 @@
             Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -205,9 +211,9 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private Label kisiSayisiLabel;
         private DataGridViewTextBoxColumn isim;
         private DataGridViewTextBoxColumn soyad;
         private DataGridViewTextBoxColumn numara;
-        private DataGridViewTextBoxColumn ID;
     }
 }
